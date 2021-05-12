@@ -8,6 +8,8 @@
     <?php require 'navbar.php' ?>
     <main>
         <?php require 'articles.php' ?>
+        <?php require 'files.php' ?>
+        <?php require 'form.php' ?>
     </main>
   </script>
   </body>
