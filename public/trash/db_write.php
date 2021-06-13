@@ -1,4 +1,5 @@
 <?php
+
 require "db.php";
 
 // Create connection
@@ -18,4 +19,3 @@ if ($conn->query($sql)) {
 }
 
 $conn->close();
-?>
