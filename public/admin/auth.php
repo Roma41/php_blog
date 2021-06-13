@@ -1,4 +1,5 @@
 <?php
+
 function require_auth()
 {
     $AUTH_USER = getenv('user');

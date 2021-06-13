@@ -6,7 +6,7 @@ $articles = Article::read_all();
     <main>
     <?php foreach ($articles as $article): ?>
     <article>
-    <a href="/article/<?= $article->id ?>">
+    <a href="/article.php?id=<?= $article->id ?>">
         <h2><?= $article->heading ?></h2>
     </a> 
         <p><?= $article->text ?></p>

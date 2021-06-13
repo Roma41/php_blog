@@ -1,28 +1,28 @@
 
 <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
-Name: <input type="text" name="fname">
-Surname: <input type="text" name="lname">
+Title: <input type="text" name="title">
+Body: <textarea name="body" cols="40" rows="5"></textarea>
 <input type="submit">
 </form>
 
 <?php
-function save($line)
-{
-    ($file_people = fopen("people.txt", "a")) or die("Unable to open file!");
-    fwrite($file_people, "$line\n");
-    fclose($file_people);
-    return true;
-}
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
-    $surname = $_POST["lname"];
-    $name = $_POST["fname"];
-    if (empty($name) or empty($surname)) {
-        echo "Name is empty";
+    require_once $_SERVER['DOCUMENT_ROOT']."/models/articles.php";
+
+
+    $title = $_POST["body"];
+    $body = $_POST["body"];
+    if (empty($body) or empty($title)) {
+        echo "заполните все!";
     } else {
-        if (save("$name $surname")) {
-            echo "все ок";
-        }
+
+        $id = Article::create($title,$body);
+        $host  = $_SERVER['HTTP_HOST'];
+        header("Location: https://$host/article.php?id=$id");
+        exit;
     }
 }
 

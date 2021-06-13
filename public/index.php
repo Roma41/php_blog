@@ -9,7 +9,6 @@
     <main>
         <?php require_once "views/articles.php";
 
-        echo explode("?", $_SERVER["REQUEST_URI"])
 
  ?>
 
