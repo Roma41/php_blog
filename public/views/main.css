@@ -1,12 +1,13 @@
 main {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 0 1em;
 }
-a:link, a:visited {
-   color:red; 
+a:link,
+a:visited {
+  color: red;
 }
-a:hover{
-    color:green;
+a:hover {
+  color: green;
 }
